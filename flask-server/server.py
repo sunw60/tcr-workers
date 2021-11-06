@@ -1,11 +1,13 @@
 from flask import Flask
+from sys import argv
 import prescriberData
 
 app = Flask(__name__)
 
 @app.route("/members")
 def members():
-    return {"members": ["Member1", "Member2", "Member3"]}
+    data = prescriberData.func(argv[1])
+    return data
 
 
 if __name__ == "__main__":
