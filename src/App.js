@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import vlogo from './Vlogo.png';
 import './App.css';
 import { useState, useEffect } from 'react'
 import Component from './Component.js'
@@ -37,24 +37,25 @@ function App() {
   )
   }, [])
   return (
-    <Router>
+    <div className="App">
+	    <Router>
       <Navbar />
-      
       <Routes>
          <Route exact path="/" element={<Home/>} />
 
           <Route path="/path1" element={<Path1/>} />
 
           <Route path="/path2" element={<Path2/>} />
-           
+
           <Route path="/path3" element={<Path3/>} />
-        
+
           <Route path="/path4" element={<Path4/>} />
-           
+
       </Routes>
-     
     </Router>
+    </div>
   );
 }
 
-export default App
+export default App;
+
