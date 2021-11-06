@@ -1,5 +1,6 @@
 import vlogo from './Vlogo.png';
 import './App.css';
+import { useState, useEffect } from 'react'
 import Component from './Component.js'
 import Navbar from './Navbar.js'
 import './Navbar.css'
@@ -15,8 +16,26 @@ import Path1 from './Path1.js'
 import Path2 from './Path2.js'
 import Path3 from './Path3.js'
 import Path4 from './Path4.js'
+const cors = require('cors');
 
 function App() {
+  const [data, setData] = useState([{}])
+
+ useEffect(() => {
+      fetch("/members", {
+        headers : { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+         }
+      }).then(
+      res => res.json()
+  ).then(
+      data => {
+        setData(data)
+        console.log(data)
+      }
+  )
+  }, [])
   return (
     <div className="App">
 	    <Router>
@@ -37,4 +56,6 @@ function App() {
     </div>
   );
 }
+
 export default App;
+
