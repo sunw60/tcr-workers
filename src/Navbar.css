@@ -1,0 +1,14 @@
+.Navbar {
+    display:flex;
+    width:100%;
+    background-color: gray;
+    justify-content: center;
+}
+.links {
+    text-decoration: none;
+    
+}
+
+.links .a {
+    color:white;
+}
